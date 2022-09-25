@@ -8,7 +8,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 
-class NewUserRequest {
+public class NewUserRequest {
 
     @Unique(entity = User.class, field = "username")
     @Size(max=20)
@@ -27,11 +27,11 @@ class NewUserRequest {
         this.email = email;
     }
 
-    String getUsername() {
+    public String getUsername() {
         return username;
     }
 
-    User toEntity() {
+    public User toEntity() {
         return new User(username, email);
     }
 }
